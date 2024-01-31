@@ -7,6 +7,7 @@ namespace Manejo_de_Presupuestos.Models
         public int Id { get; set; }
         [Required(ErrorMessage ="El campo \"{0}\" es requerido")]
         [StringLength(maximumLength: 30, MinimumLength =3, ErrorMessage = "La longitud del campo \"{0}\" debe de estar entre {2} caracteres y {1} caracteres")]
+        [Display(Name ="Nombre del tipo de la cuenta a crear")]
         public string Nombre { get; set;}
         public int UsuarioId { get; set; }
         public int Orden { get; set; }
