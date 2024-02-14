@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Manejo_de_Presupuestos.Validaciones;
+using System.ComponentModel.DataAnnotations;
 
 namespace Manejo_de_Presupuestos.Models
 {
@@ -9,6 +10,7 @@ namespace Manejo_de_Presupuestos.Models
         [Required( ErrorMessage = "Por favor, introduce el nombre del tipo de cuenta." )]
         [StringLength( maximumLength: 30, MinimumLength = 3, ErrorMessage = "El nombre del tipo de cuenta debe tener entre 3 y 30 caracteres." )]
         [Display( Name = "Nombre del tipo de la cuenta a crear" )]
+        [PrimeraLetraMayuscula]
         public string Nombre { get; set; }
 
         [Required( ErrorMessage = "El ID del usuario es obligatorio." )]
@@ -33,5 +35,7 @@ namespace Manejo_de_Presupuestos.Models
         [CreditCard( ErrorMessage = "Por favor, introduce un número de tarjeta de crédito válido." )]
         [Display( Name = "Tarjeta de crédito" )]
         public string TarjetaDeCredito { get; set; }
+
+
     }
 }
